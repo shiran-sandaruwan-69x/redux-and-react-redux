@@ -1,0 +1,5 @@
+
+01 first create a package.json file run this commands == npm init --yes
+02 then run install redux == npm install redux
+03 then if use want create js file / code and run redux code
+04 then you can run js file run this command == node index

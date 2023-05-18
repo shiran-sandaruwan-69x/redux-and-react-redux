@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import CakeContainer from "./CakeContainer";
 import IceCreamComp from "./IceCreamComp";
+import MapStatePropsComp from "./MapStatePropsComp";
 
 interface ShopProps {
     numOfCake?:any,
@@ -33,6 +34,8 @@ class ShopComp extends React.Component<ShopProps,ShopState> {
                 <h1>{this.state.numOfCake}</h1>
                 <CakeContainer/>
                 <IceCreamComp/>
+                <MapStatePropsComp/>
+                <MapStatePropsComp pp={'kamal'} cake/>
             </div>
         );
     }

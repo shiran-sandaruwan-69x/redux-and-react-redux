@@ -30,7 +30,7 @@ class IceCreamComp extends React.Component<IceCreamProps,IceCreamState> {
     }
 
     render() {
-        console.log(this.props)
+        //console.log(this.props)
         return (
             <div>
                 <h1>{this.props.noOfIceCream}</h1>

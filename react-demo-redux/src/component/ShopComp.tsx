@@ -27,7 +27,7 @@ class ShopComp extends React.Component<ShopProps,ShopState> {
     }
 
     render() {
-        console.log(this.props.numOfCake)
+       // console.log(this.props.numOfCake)
         return (
             <div style={{marginLeft:'40%',marginTop:'9%'}}>
                 <h1>{this.state.numOfCake}</h1>

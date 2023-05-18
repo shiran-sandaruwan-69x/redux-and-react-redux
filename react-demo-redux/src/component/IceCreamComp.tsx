@@ -8,7 +8,7 @@ interface IceCreamProps {
 }
 
 interface IceCreamState {
-
+    noOf:number
 }
 
 const mapToProps=(state:any)=>{
@@ -19,7 +19,7 @@ const mapToProps=(state:any)=>{
 
 const mapDispatchToProps=(dispatch:any)=>{
     return{
-        buyIceCream:()=>dispatch(buyIceCream())
+        buyIceCream:(noOf:number)=>dispatch(buyIceCream(noOf))
     }
 }
 
@@ -27,14 +27,24 @@ class IceCreamComp extends React.Component<IceCreamProps,IceCreamState> {
 
     constructor(props: Readonly<IceCreamProps> | IceCreamProps) {
         super(props);
+        this.state={
+            noOf:1
+        }
     }
+
+
 
     render() {
         //console.log(this.props)
         return (
             <div>
                 <h1>{this.props.noOfIceCream}</h1>
-                <button onClick={this.props.buyIceCream}>buy ice cream</button>
+                <input type='text' value={this.state.noOf} onChange={(event:any)=>this.setState({
+                    noOf:event.target.value
+                })}/>
+                <button onClick={()=>{
+                    this.props.buyIceCream(this.state.noOf)
+                }}>buy {this.state.noOf} ice cream</button>
             </div>
         );
     }

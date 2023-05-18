@@ -1,9 +1,11 @@
 import React from 'react';
 import {connect} from "react-redux";
 import CakeContainer from "./CakeContainer";
+import IceCreamComp from "./IceCreamComp";
 
 interface ShopProps {
-    numOfCake?:any
+    numOfCake?:any,
+
 }
 interface ShopState {
     numOfCake:any
@@ -30,6 +32,7 @@ class ShopComp extends React.Component<ShopProps,ShopState> {
             <div style={{marginLeft:'40%',marginTop:'9%'}}>
                 <h1>{this.state.numOfCake}</h1>
                 <CakeContainer/>
+                <IceCreamComp/>
             </div>
         );
     }
@@ -37,7 +40,7 @@ class ShopComp extends React.Component<ShopProps,ShopState> {
 
 const mapStateToProps=(state:any)=>{
     return{
-        numOfCake:state.numOfCake
+        numOfCake:state.cake.numOfCake
     }
 }
 

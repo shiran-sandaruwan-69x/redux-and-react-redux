@@ -13,7 +13,7 @@ interface CakeState {
 
 const mapStateToProps=(state:any)=>{
     return{
-        numOfCake: state.numOfCake
+        numOfCake: state.cake.numOfCake
     }
 }
 

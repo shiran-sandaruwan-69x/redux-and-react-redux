@@ -32,6 +32,8 @@ class MapStatePropsComp extends React.Component<MapStateProps,MapState> {
     }
 }
 
+// ownProps use krann puluwan apita key ekk use karala apita ona function eka run krnn puluwan props use karala
+// <MapStatePropsComp cake /> component eka call karala props ekata key eka pass karala run krnn puluwan
 const mapStateProps=(state:any,ownProps:any)=>{
     console.log(ownProps)
     const itemState=ownProps.cake

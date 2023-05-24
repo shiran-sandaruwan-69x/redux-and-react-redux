@@ -1,11 +1,11 @@
 import React from 'react';
-import CustomerComp from "./component/CustomerComp";
+import CustomerSaveComp from "./component/CustomerSaveComp";
 
 
 function App() {
   return (
     <div className="App">
-            <CustomerComp/>
+            <CustomerSaveComp />
     </div>
   );
 }

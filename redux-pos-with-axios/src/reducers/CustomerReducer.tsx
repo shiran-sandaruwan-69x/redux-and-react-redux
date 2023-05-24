@@ -1,7 +1,8 @@
-import {CUSTOMER_SAVE} from "../actions/CustomerActionTypes";
+import {CUSTOMER_GET, CUSTOMER_SAVE} from "../actions/CustomerActionTypes";
 
 const initialState={
-    customerSaveData:[]
+    customerSaveData:[],
+    allCustomers:[]
 }
 
 const customerReducer=(state:any=initialState,actions:any)=>{
@@ -10,6 +11,12 @@ const customerReducer=(state:any=initialState,actions:any)=>{
             ...state,
             customerSaveData: [...state.customerSaveData,actions.payload]
         }
+
+        case CUSTOMER_GET:return {
+            ...state,
+            allCustomer:actions.payload
+        }
+
         default : return state
     }
 }

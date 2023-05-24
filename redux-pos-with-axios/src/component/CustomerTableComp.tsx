@@ -38,6 +38,7 @@ class CustomerTableComp extends React.Component<CustomerTableProps,CustomerTable
             <div>
                 <Table
                 columns={columns}
+                dataSource={this.props.customers}
                 />
             </div>
         );
@@ -46,7 +47,7 @@ class CustomerTableComp extends React.Component<CustomerTableProps,CustomerTable
 
 const mapToProps=(state:any)=>{
     return{
-        customers:state.customers
+        customers:state.customers.allCustomers
     }
 }
 

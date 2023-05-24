@@ -3,6 +3,7 @@ import {Form, Input, Space} from "antd";
 import axios from "axios";
 import {connect} from "react-redux";
 import {saveCustomer} from "../actions/CustomerAction";
+import CustomerTableComp from "./CustomerTableComp";
 
 
 interface customerProps {
@@ -34,8 +35,6 @@ class CustomerSaveComp extends React.Component<customerProps,customerState> {
 
     }
 
-
-
     render() {
         return (
             <Space style={{marginTop:'2%',marginLeft:'40%'}}>
@@ -51,6 +50,7 @@ class CustomerSaveComp extends React.Component<customerProps,customerState> {
                     </Form.Item>
                     <button type='submit'>save customer</button>
                 </Form>
+                <CustomerTableComp/>
             </Space>
         );
     }

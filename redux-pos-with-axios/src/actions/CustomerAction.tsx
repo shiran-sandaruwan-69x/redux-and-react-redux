@@ -23,20 +23,22 @@ export const saveCustomer=(customer:any)=>{
     }
 }
 
-export const getCustomer=(dispatch:any)=>{
-    axios({
-        url:'/posts',
-        method:'GET',
-        responseType:'json'
-    })
-        .then((response:any)=>{
-            dispatch({
-                type:CUSTOMER_GET,
-                payload:response.data
+export const getCustomer=()=>{
+    return(dispatch:any)=>{
+        axios({
+            url:'/posts',
+            method:'GET',
+            responseType:'json'
+        })
+            .then((response:any)=>{
+                dispatch({
+                    type:CUSTOMER_GET,
+                    payload:response.data
+                })
             })
-        })
-        .catch((error:any)=>{
-            console.log(error.message)
-        })
+            .catch((error:any)=>{
+                console.log(error.message)
+            })
+    }
 }
 

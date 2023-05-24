@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Input, Space} from "antd";
+import {Button, Form, Input, Space} from "antd";
 import axios from "axios";
 import {connect} from "react-redux";
 import {saveCustomer} from "../actions/CustomerAction";
@@ -37,21 +37,23 @@ class CustomerSaveComp extends React.Component<customerProps,customerState> {
 
     render() {
         return (
-            <Space style={{marginTop:'2%',marginLeft:'40%'}}>
-                <Form onFinish={this.saveCustomer}>
-                    <Form.Item label='user id' name='userId'>
-                        <Input />
-                    </Form.Item>
-                    <Form.Item label='title' name='title'>
-                        <Input />
-                    </Form.Item>
-                    <Form.Item label='message' name='body'>
-                        <Input />
-                    </Form.Item>
-                    <button type='submit'>save customer</button>
-                </Form>
-                <CustomerTableComp/>
-            </Space>
+            // <Space style={{marginTop:'2%'}}>
+                <Space>
+                    <Form style={{width:400}} onFinish={this.saveCustomer}>
+                        <Form.Item label='user id' name='userId'>
+                            <Input />
+                        </Form.Item>
+                        <Form.Item label='title' name='title'>
+                            <Input />
+                        </Form.Item>
+                        <Form.Item label='message' name='body'>
+                            <Input />
+                        </Form.Item>
+                        <Button type='primary' htmlType='submit'>save customer</Button>
+                    </Form>
+                    <CustomerTableComp/>
+                </Space>
+            //</Space>
         );
     }
 }

@@ -1,9 +1,11 @@
 import React from 'react';
 import {Table} from "antd";
 import {connect} from "react-redux";
+import {getCustomer} from "../actions/CustomerAction";
 
 interface CustomerTableProps {
-    customers?:any
+    customers?:any,
+    getCustomers?:any
 }
 interface CustomerTableState {
 
@@ -17,12 +19,16 @@ class CustomerTableComp extends React.Component<CustomerTableProps,CustomerTable
         }
     }
 
+    componentDidMount() {
+       this.props.getCustomers()
+    }
+
     render() {
 
         let columns:any=[
             {
                 title:'id',
-                dataIndex:'dataIndex'
+                dataIndex:'userId'
             },
             {
                 title: 'title',
@@ -38,7 +44,10 @@ class CustomerTableComp extends React.Component<CustomerTableProps,CustomerTable
             <div>
                 <Table
                 columns={columns}
+                scroll={{x:300,y:400}}
                 dataSource={this.props.customers}
+                rowKey={'id'}
+                pagination={false}
                 />
             </div>
         );
@@ -46,9 +55,16 @@ class CustomerTableComp extends React.Component<CustomerTableProps,CustomerTable
 }
 
 const mapToProps=(state:any)=>{
+   console.log(state)
     return{
-        customers:state.customers.allCustomers
+        customers:state.customers.allCustomer
     }
 }
 
-export default connect(mapToProps)(CustomerTableComp);
+const mapToDispatchProps=(dispatch:any)=>{
+    return{
+        getCustomers:()=>dispatch(getCustomer())
+    }
+}
+
+export default connect(mapToProps,mapToDispatchProps)(CustomerTableComp);

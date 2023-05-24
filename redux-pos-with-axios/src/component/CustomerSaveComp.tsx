@@ -14,7 +14,6 @@ interface customerState {
     customerData:any
 }
 
-// axios.defaults.baseURL ='https://jsonplaceholder.typicode.com'
 
 class CustomerSaveComp extends React.Component<customerProps,customerState> {
 

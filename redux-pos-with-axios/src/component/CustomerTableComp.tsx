@@ -55,7 +55,7 @@ class CustomerTableComp extends React.Component<CustomerTableProps,CustomerTable
 }
 
 const mapToProps=(state:any)=>{
-   console.log(state)
+   
     return{
         customers:state.customers.allCustomer
     }

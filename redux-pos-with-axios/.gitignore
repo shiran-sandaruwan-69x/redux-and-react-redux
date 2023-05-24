@@ -1,9 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/react-demo-redux/node_modules
-/react-redux-async-actions/node_modules
-/redux-pos-with-axios/node_modules
+/node_modules
 /.pnp
 .pnp.js
 

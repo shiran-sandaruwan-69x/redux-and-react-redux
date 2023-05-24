@@ -1,9 +1,9 @@
 import {FETCH_CUSTOMERS, SELECT_ROW, SELECT_ROW_AND_INDEX} from "../actions/PostActionTypes";
 
 const initialState={
-    customers:'',
+    customers:[],
     selectRow:[],
-    selectRowAndIndex:{}
+    selectRowAndIndex:[]
 }
 
 const getCustomerReducer=(state:any=initialState,actions:any)=>{

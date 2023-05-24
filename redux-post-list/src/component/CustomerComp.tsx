@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import {getCustomers, getSelectTableRowAndIndex, getTableSelectRow} from "../actions/PostActions";
 import {Table} from "antd";
+import SelectedTableRow from "./SelectedTableRow";
 
 interface CustomerProps {
     getCustomers?:any,
@@ -41,14 +42,17 @@ class CustomerComp extends React.Component<CustomerProps,CustomerState> {
                 dataIndex:'id'
             },
             {
-                title:'Name',
-                dataIndex:'name'
+                title:'title',
+                dataIndex:'title'
             }
         ]
 
         return (
             <div>
                 <Table
+                    style={{maxWidth:900}}
+                    pagination={false}
+                    scroll={{ y: 300 , x:300}}
                     dataSource={this.props.cusData}
                     columns={col}
                     rowKey={'id'}
@@ -64,6 +68,7 @@ class CustomerComp extends React.Component<CustomerProps,CustomerState> {
                         }
                     }}
                 />
+                <SelectedTableRow/>
             </div>
         );
     }
